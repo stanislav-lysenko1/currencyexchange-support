@@ -36,19 +36,35 @@ body{
   box-shadow:0 8px 28px rgba(0,0,0,.08);
 }
 
+/* 🔘 Language Switch */
 .lang-switch{
   display:flex;
   justify-content:flex-end;
   gap:8px;
-  margin-bottom:10px;
+  margin-bottom:14px;
 }
 
 .lang-switch button{
   border:1px solid var(--outline);
   background:transparent;
-  padding:6px 10px;
-  border-radius:8px;
+  padding:6px 12px;
+  border-radius:999px;
   cursor:pointer;
+  font-size:13px;
+  color:var(--on-surface-variant);
+  transition:.2s ease;
+}
+
+/* ✅ Active state (как segmented control в Material) */
+.lang-switch button.active{
+  background:var(--on-surface-variant);
+  color:#fff;
+  border-color:var(--on-surface-variant);
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+
+.lang-switch button:hover{
+  opacity:.85;
 }
 
 h1{text-align:center;margin-bottom:6px;}
@@ -73,18 +89,23 @@ button.submit{
   color:#fff;
   font-size:16px;
   cursor:pointer;
+  transition:.2s ease;
 }
 
+button.submit:hover{ opacity:.9; }
+
 #status{text-align:center;margin-top:10px;color:var(--on-surface-variant);font-size:14px;}
-.info{margin-top:20px;font-size:13px;color:var(--on-surface-variant);}
+
+.info{margin-top:20px;font-size:13px;color:var(--on-surface-variant);line-height:1.5;}
 </style>
 </head>
 
 <body>
 <div class="container">
+
   <div class="lang-switch">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('uk')">UA</button>
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-uk" onclick="setLang('uk')">UA</button>
   </div>
 
   <h1 data-i18n="headline"></h1>
@@ -116,12 +137,17 @@ button.submit{
 <script>
 const ENDPOINT = "https://formspree.io/f/mqedqnwz";
 let dict = {};
-let currentLang = localStorage.getItem("lang") || "en";
+let currentLang = localStorage.getItem("lang") || (navigator.language.startsWith("uk") ? "uk" : "en");
 
 async function loadTranslations(){
   const res = await fetch("i18n.json");
   dict = await res.json();
   applyLang(currentLang);
+}
+
+function updateButtons(){
+  document.getElementById("btn-en").classList.toggle("active", currentLang==="en");
+  document.getElementById("btn-uk").classList.toggle("active", currentLang==="uk");
 }
 
 function applyLang(lang){
@@ -133,6 +159,8 @@ function applyLang(lang){
     const key = el.dataset.i18n;
     el.textContent = dict[lang][key];
   });
+
+  updateButtons();
 }
 
 function setLang(lang){ applyLang(lang); }
