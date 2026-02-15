@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CurrencyExchange — Support</title>
+<meta name="description" content="Support page for CurrencyExchange. Send a message to support." />
+
+<style>
+:root {
+  /* 🎨 React Native Paper MD3 Light (common defaults) */
+  --background: #FFFBFE;
+  --surface: #FFFBFE;
+  --surface-variant: #E7E0EC;
+  --on-surface: #1C1B1F;
+  /* ✅ requested: MD3LightTheme.colors.onSurfaceVariant */
+  --on-surface-variant: #49454F;
+  --outline: #79747E;
+  --primary: #6750A4;
+
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--background);
+  color: var(--on-surface);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow:
+    0px 1px 2px rgba(0,0,0,0.10),
+    0px 6px 24px rgba(0,0,0,0.08);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--surface-variant);
+  border: 1px solid rgba(0,0,0,0.08);
+  color: var(--on-surface-variant);
+  font-size: 13px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(26px, 4vw, 38px);
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 62ch;
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+  .container { padding: 26px 18px; }
+}
+
+.panel {
+  border-radius: 16px;
+  background: var(--surface-variant);
+  border: 1px solid rgba(0,0,0,0.10);
+  padding: 16px;
+}
+
+label {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  display: block;
+  margin: 0 0 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+  background: var(--surface);
+  color: var(--on-surface);
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: rgba(103, 80, 164, 0.55);
+  box-shadow: 0 0 0 4px rgba(103, 80, 164, 0.12);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 520px) {
+  .row { grid-template-columns: 1fr; }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  flex: 1 1 180px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* ✅ requested color for button */
+  background: var(--on-surface-variant);
+  color: white;
+
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+button:hover { transform: translateY(-1px); opacity: 0.95; }
+button:active { transform: translateY(0); opacity: 1; }
+
+button.secondary {
+  background: transparent;
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline);
+}
+
+.hint {
+  margin-top: 10px;
+  color: var(--on-surface-variant);
+  font-size: 12.5px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+#status {
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--on-surface-variant);
+}
+
+.kv {
+  display: grid;
+  gap: 10px;
+}
+
+.cardline {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.75);
+  border: 1px solid rgba(0,0,0,0.06);
+  color: var(--on-surface-variant);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.footer {
+  margin-top: 14px;
+  text-align: center;
+  color: rgba(28, 27, 31, 0.55);
+  font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+  <main class="container" role="main">
+    <div class="header">
+      <div class="badge"><span class="dot"></span> CurrencyExchange — Support</div>
+      <h1>We’re here to help</h1>
+      <p class="subtitle">
+        Have a question, found a bug, or want to suggest an improvement?
+        Send a message below — we typically respond within 1–2 business days.
+      </p>
+    </div>
+
+    <section class="grid" aria-label="Support form and info">
+      <div class="panel">
+        <form id="supportForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="name">Your name (optional)</label>
+              <input id="name" name="name" autocomplete="name" placeholder="e.g. Stas" />
+            </div>
+            <div>
+              <label for="replyTo">Reply-to email (optional)</label>
+              <input id="replyTo" name="replyTo" type="email" autocomplete="email" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div style="display:grid; gap:10px;">
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required placeholder="Describe your issue or question..."></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="sendBtn" type="submit">Send Message</button>
+            <button class="secondary" type="button" id="clearBtn">Clear</button>
+          </div>
+
+          <div id="status" role="status" aria-live="polite"></div>
+          <div class="hint">No support email is shown publicly on this page.</div>
+        </form>
+      </div>
+
+      <aside class="panel" aria-label="Support tips">
+        <div class="kv">
+          <div class="cardline"><strong>Tip:</strong> If it’s a bug, include device model + iOS version + what you expected.</div>
+          <div class="cardline"><strong>About:</strong> CurrencyExchange shows official exchange rates, historical rates by date, and provides currency conversion.</div>
+          <div class="cardline"><strong>Privacy:</strong> The app does not collect personal data.</div>
+        </div>
+        <div class="footer">© 2026 CurrencyExchange</div>
+      </aside>
+    </section>
+  </main>
+
+<script>
+  // ✅ Formspree endpoint provided by you
+  const ENDPOINT = "https://formspree.io/f/mqedqnwz";
+
+  const form = document.getElementById("supportForm");
+  const statusDiv = document.getElementById("status");
+  const clearBtn = document.getElementById("clearBtn");
+  const sendBtn = document.getElementById("sendBtn");
+
+  function setStatus(text) {
+    statusDiv.textContent = text;
+  }
+
+  clearBtn.addEventListener("click", () => {
+    form.reset();
+    setStatus("");
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const message = document.getElementById("message").value.trim();
+    if (!message) {
+      setStatus("Please enter a message.");
+      document.getElementById("message").focus();
+      return;
+    }
+
+    sendBtn.disabled = true;
+    sendBtn.style.opacity = "0.7";
+    setStatus("Sending…");
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        form.reset();
+        setStatus("✅ Message sent. Thanks — we’ll get back to you soon.");
+      } else {
+        setStatus("⚠️ Could not send right now. Please try again later.");
+      }
+    } catch (err) {
+      setStatus("⚠️ Network error. Please try again later.");
+    } finally {
+      sendBtn.disabled = false;
+      sendBtn.style.opacity = "1";
+    }
+  });
+</script>
+</body>
+</html>
