@@ -1,0 +1,38 @@
+{
+  "en": {
+    "pageTitle": "CurrencyExchange — Support",
+    "headline": "We’re here to help",
+    "subtitle": "Have a question, found a bug, or want to suggest an improvement? Send a message below — we typically respond within 1–2 business days.",
+    "name": "Your name (optional)",
+    "email": "Reply-to email (optional)",
+    "message": "Message",
+    "send": "Send Message",
+    "clear": "Clear",
+    "tip": "Tip: If it’s a bug, include device model + iOS version + what you expected.",
+    "about": "CurrencyExchange shows official exchange rates, historical rates by date, and provides currency conversion.",
+    "privacy": "The app does not collect personal data.",
+    "hint": "No support email is shown publicly on this page.",
+    "sending": "Sending…",
+    "sent": "✅ Message sent. Thanks — we’ll get back to you soon.",
+    "error": "⚠️ Could not send right now. Please try again later.",
+    "empty": "Please enter a message."
+  },
+  "uk": {
+    "pageTitle": "CurrencyExchange — Підтримка",
+    "headline": "Ми допоможемо",
+    "subtitle": "Є питання, знайшли помилку або маєте пропозицію? Напишіть нам — зазвичай відповідаємо протягом 1–2 робочих днів.",
+    "name": "Ваше ім’я (необов’язково)",
+    "email": "Email для відповіді (необов’язково)",
+    "message": "Повідомлення",
+    "send": "Надіслати",
+    "clear": "Очистити",
+    "tip": "Порада: якщо це баг — вкажіть модель пристрою та версію iOS.",
+    "about": "CurrencyExchange показує офіційні курси валют, історію курсів та дозволяє виконувати конвертацію.",
+    "privacy": "Застосунок не збирає персональні дані.",
+    "hint": "Email підтримки не публікується на цій сторінці.",
+    "sending": "Надсилання…",
+    "sent": "✅ Повідомлення надіслано.",
+    "error": "⚠️ Не вдалося надіслати. Спробуйте пізніше.",
+    "empty": "Будь ласка, введіть повідомлення."
+  }
+}
